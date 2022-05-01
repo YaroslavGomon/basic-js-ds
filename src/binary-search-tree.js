@@ -8,17 +8,17 @@ const { Node } = require('../extensions/list-tree.js');
  */
 class BinarySearchTree {
   constructor() {
-    this.top = null; // рут - название метода, поэтому рут поменял на топ.
+    this.rut = null;
   }
 
   root() {
-    return this.top;
+    return this.rut;
     // throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
   }
 
   add(data) {
-    this.top = addWithin(this.top, data);
+    this.rut = addWithin(this.rut, data);
 
     function addWithin(node, data) {
       if (!node) {
@@ -40,7 +40,7 @@ class BinarySearchTree {
   }
 
   has(data) {
-    return searchWithin(this.top, data);
+    return searchWithin(this.rut, data);
 
     function searchWithin(node, data) {
       if (!node) {
@@ -63,7 +63,7 @@ class BinarySearchTree {
   }
 
   remove(data) {
-    this.top = removeNode(this.top, data);
+    this.rut = removeNode(this.rut, data);
 
     function removeNode(node, data) {
       if (!node) {
@@ -107,11 +107,11 @@ class BinarySearchTree {
   }
 
   min() {
-    if (!this.top) {
+    if (!this.rut) {
       return;
     }
 
-    let node = this.top;
+    let node = this.rut;
     while (node.left) {
       node = node.left;
     }
@@ -122,11 +122,11 @@ class BinarySearchTree {
   }
 
   max() {
-    if (!this.top) {
+    if (!this.rut) {
       return;
     }
 
-    let node = this.top;
+    let node = this.rut;
     while (node.right) {
       node = node.right;
     }
